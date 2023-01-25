@@ -1,30 +1,61 @@
 import React from "react";
 import "./Login.css";
 import { BiUserCircle, BiKey } from "react-icons/bi";
+import { useFormik } from "formik";
+import LoginSchema from "./LoginSchema";
 
 export default function Login() {
+  const { errors, handleChange, handleSubmit, touched } = useFormik({
+    initialValues: {
+      email: "",
+      password: "",
+    },
+    onSubmit: (value, action) => {
+      console.log(value);
+      action.resetForm();
+    },
+    validationSchema: LoginSchema,
+  });
   return (
     <section className="login">
       <div className="login-box">
         <div className="left">
-          <form action="">
+          <form action="" onSubmit={handleSubmit}>
             <h2 className="login-heading">Let's shop your favourites</h2>
             <p className="login-subinfo">
               Join our growing ecommerce platform for the value for money
               services
             </p>
+
             <div className="input-box">
+              {errors.email && touched.email && (
+                <span className="error-text">{errors.email}</span>
+              )}
               <div className="input">
                 <span className="input-logo-wrapper">
                   <BiUserCircle className="input-logo" />
                 </span>
-                <input type="text" placeholder="Your email here" />
+                <input
+                  type="text"
+                  placeholder="Your email here"
+                  onChange={handleChange}
+                  name="email"
+                />
               </div>
+              {errors.password && touched.password && (
+                <span className="error-text">{errors.password}</span>
+              )}
               <div className="input">
                 <span className="input-logo-wrapper">
                   <BiKey className="input-logo key" />
                 </span>
-                <input type="text" placeholder="Your password here" />
+
+                <input
+                  type="password"
+                  placeholder="Your password here"
+                  onChange={handleChange}
+                  name="password"
+                />
               </div>
             </div>
             <button className="btn-primary">Login</button>

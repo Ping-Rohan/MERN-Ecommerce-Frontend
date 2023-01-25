@@ -17,7 +17,7 @@
 
 .left {
   flex: 60%;
-  padding: 70px;
+  padding: 60px;
 }
 
 .right {
@@ -37,6 +37,7 @@
   align-items: center;
   border: 1.5px solid #ccc;
   border-radius: 10px;
+  margin-block: 5px 10px;
 }
 
 .input-logo {
@@ -103,11 +104,15 @@ img {
   font-family: inherit;
 }
 
+.error-text {
+  font-size: 13px;
+  color: red;
+}
+
 .input-box {
   padding-block: 15px;
   display: flex;
   flex-direction: column;
-  gap: 15px;
 }
 
 .btn-primary:hover {
