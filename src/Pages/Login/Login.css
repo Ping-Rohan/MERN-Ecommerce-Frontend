@@ -1,0 +1,146 @@
+.login {
+  background-color: #ccdbfd;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+.login-box {
+  max-width: 850px;
+  background-color: #fff;
+  display: flex;
+  border-radius: 5px;
+  font-family: inherit;
+}
+
+.left {
+  flex: 60%;
+  padding: 70px;
+}
+
+.right {
+  width: 40%;
+  overflow: hidden;
+}
+
+.login-box input {
+  border: none;
+  outline: none;
+  font-family: inherit;
+  width: 100%;
+}
+
+.input {
+  display: flex;
+  align-items: center;
+  border: 1.5px solid #ccc;
+  border-radius: 10px;
+}
+
+.input-logo {
+  font-size: 28px;
+  color: #ccc;
+}
+
+.key {
+  transform: rotate(-30deg);
+}
+
+.input-logo-wrapper {
+  display: block;
+  border-right: 1.5px solid #ccc;
+  padding: 10px;
+}
+
+input {
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+.create-account {
+  text-align: center;
+  margin-top: 20px;
+  color: #152238;
+}
+
+a {
+  text-decoration: none;
+}
+
+.create-account a {
+  display: inline-block;
+}
+.login-heading {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 32px;
+  margin-bottom: 5px;
+  color: #152238;
+}
+
+.login-subinfo {
+  margin-bottom: 20px;
+  color: #454545;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.btn-primary {
+  border: none;
+  outline: none;
+  background-color: #ff8b13;
+  font-size: 16px;
+  padding: 15px 20px;
+  width: 100%;
+  color: #fff;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.input-box {
+  padding-block: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.btn-primary:hover {
+  background-color: #fc9c36d4;
+}
+
+.left button {
+  margin-top: 15px;
+}
+
+@media (max-width: 480px) {
+  .right {
+    display: none;
+  }
+  .login-box {
+    width: 90%;
+  }
+  .left {
+    padding: 20px;
+  }
+  .login-heading {
+    font-size: 24px;
+  }
+  .login-subinfo {
+    font-size: 14px;
+  }
+  .btn-primary {
+    padding: 12px 20px;
+  }
+  .input-logo-wrapper {
+    padding: 5px;
+  }
+  .input-logo {
+    font-size: 24px;
+  }
+}
