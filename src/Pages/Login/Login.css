@@ -1,6 +1,6 @@
 .login {
   background-color: #ccdbfd;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -58,6 +58,7 @@
 input {
   padding: 5px 10px;
   font-size: 14px;
+  background-color: transparent;
 }
 
 .create-account {
@@ -110,7 +111,7 @@ img {
 }
 
 .input-box {
-  padding-block: 15px;
+  padding-block: 10px;
   display: flex;
   flex-direction: column;
 }

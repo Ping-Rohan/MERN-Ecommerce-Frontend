@@ -3,15 +3,21 @@ import "./Login.css";
 import { BiUserCircle, BiKey } from "react-icons/bi";
 import { useFormik } from "formik";
 import LoginSchema from "./LoginSchema";
+import { login } from "../../Store/UserSlice";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
-  const { errors, handleChange, handleSubmit, touched } = useFormik({
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { errors, handleChange, handleSubmit, touched, values } = useFormik({
     initialValues: {
       email: "",
       password: "",
     },
     onSubmit: (value, action) => {
       console.log(value);
+      dispatch(login(value, navigate));
       action.resetForm();
     },
     validationSchema: LoginSchema,
@@ -40,6 +46,7 @@ export default function Login() {
                   placeholder="Your email here"
                   onChange={handleChange}
                   name="email"
+                  value={values.email}
                 />
               </div>
               {errors.password && touched.password && (
@@ -55,10 +62,13 @@ export default function Login() {
                   placeholder="Your password here"
                   onChange={handleChange}
                   name="password"
+                  value={values.password}
                 />
               </div>
             </div>
-            <button className="btn-primary">Login</button>
+            <button className="btn-primary" type="submit">
+              Login
+            </button>
           </form>
           <div className="create-account">
             <a href="">Create account?</a>
