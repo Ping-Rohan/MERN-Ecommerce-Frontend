@@ -2,6 +2,7 @@ import React from "react";
 import "./Header.css";
 import Logo from "../../Images/logo.png";
 import { MdManageAccounts, MdShoppingCart } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
@@ -12,9 +13,13 @@ export default function Header() {
         </span>
 
         <ul>
-          <li>Home</li>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
           <li>Shop</li>
-          <li>Pages</li>
+          <li>
+            <Link to="/product">Pages</Link>
+          </li>
           <li>Blog</li>
           <li>Contact</li>
         </ul>

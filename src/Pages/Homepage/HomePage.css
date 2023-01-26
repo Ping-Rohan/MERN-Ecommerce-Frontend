@@ -1,9 +1,7 @@
 .product-image {
   height: 150px;
 }
-.homepage {
-  background-color: #fafafa;
-}
+
 .products {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

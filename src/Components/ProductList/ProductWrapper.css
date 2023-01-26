@@ -1,7 +1,22 @@
-.product-wrapper {
-  margin-top: 40px;
+.product-wrapper .product-category {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-
   gap: 30px;
+}
+
+.product-wrapper {
+  margin-top: 60px;
+}
+
+.category-heading {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  margin-top: 60px;
+}
+
+.category-heading h2 {
+  font-family: monospace, "Lucida Sans", Arial, sans-serif;
+  font-weight: 600;
+  color: #36454f;
 }
