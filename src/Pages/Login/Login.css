@@ -116,10 +116,6 @@ img {
   flex-direction: column;
 }
 
-.btn-primary:hover {
-  background-color: #fc9c36d4;
-}
-
 .left button {
   margin-top: 15px;
 }

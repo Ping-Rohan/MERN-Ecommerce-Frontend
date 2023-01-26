@@ -29,6 +29,10 @@ img {
   color: #fff;
 }
 
+.hero-button .btn-primary {
+  width: 130px;
+}
+
 .hero::after {
   position: absolute;
   content: "";
@@ -37,6 +41,22 @@ img {
   background-color: rgba(0, 0, 0, 0.4);
   top: 0;
   left: 0;
+}
+
+.btn-secondary,
+.hero-button .btn-primary {
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.hero-button {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  margin-top: 30px;
 }
 
 @media (max-width: 480px) {

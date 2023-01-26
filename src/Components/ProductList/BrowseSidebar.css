@@ -1,0 +1,29 @@
+.sidebar-heading {
+  background-color: #ff8b13;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sidebar {
+  color: #fff;
+  background-color: #d8d8d8;
+  max-width: 400px;
+}
+
+.sidebar ul {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  list-style: none;
+  color: #454545;
+}
+
+.sidebar ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}

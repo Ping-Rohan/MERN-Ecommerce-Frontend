@@ -17,6 +17,11 @@ export default function Hero() {
           voluptatibus, neque vel distinctio, perspiciatis alias veritatis minus
           fugiat. Aperiam, itaque a?
         </p>
+        <div className="hero-button">
+          <button className="btn-secondary">Become seller</button>
+
+          <button className="btn-primary">Shop now</button>
+        </div>
       </div>
     </section>
   );
