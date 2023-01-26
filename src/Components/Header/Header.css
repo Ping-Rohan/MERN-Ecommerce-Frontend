@@ -1,0 +1,75 @@
+.logo {
+  height: 70px;
+  width: 70px;
+  display: block;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+header ul {
+  width: 80%;
+}
+
+.buttons {
+  width: 20%;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+header {
+  display: flex;
+}
+
+header ul {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+header ul li {
+  cursor: pointer;
+}
+
+.cart-btn {
+  position: relative;
+}
+
+.cart {
+  position: relative;
+}
+
+.cart-number {
+  background-color: red;
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  height: 20px;
+  width: 20px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.header-button {
+  cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  header ul,
+  .buttons {
+    display: none;
+  }
+}

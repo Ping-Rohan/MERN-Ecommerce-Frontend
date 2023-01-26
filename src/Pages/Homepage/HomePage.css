@@ -1,0 +1,40 @@
+.product-image {
+  height: 150px;
+}
+.homepage {
+  background-color: #fafafa;
+}
+.products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.container {
+  max-width: 1100px;
+  margin-inline: auto;
+}
+
+.product-name {
+  font-size: 18px;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 600;
+}
+
+.product {
+  background-color: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.product-information {
+  padding: 15px;
+}
+
+.product-by {
+  font-size: 14px;
+}
+
+.store {
+  font-weight: 500;
+  text-decoration-style: it;
+}
