@@ -27,6 +27,9 @@ export default function BrowseSidebar() {
           <li>
             <span>Sports & Outdoors</span> <AiOutlineArrowRight />
           </li>
+          <li>
+            <span>Home Utensils</span> <AiOutlineArrowRight />
+          </li>
         </ul>
       </div>
     </aside>

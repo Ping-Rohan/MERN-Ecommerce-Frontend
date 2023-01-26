@@ -24,6 +24,15 @@ header ul {
 }
 
 header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 999999;
+  background-color: #fff;
+  width: 100vw;
+}
+
+header .container {
   display: flex;
 }
 

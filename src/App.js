@@ -8,7 +8,7 @@ import Layout from "./Pages/Layout/Layout";
 export default function App() {
   return (
     <>
-      <Toaster />
+      <Toaster position="bottom-center" />
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route element={<Layout />}>
