@@ -6,3 +6,16 @@
   display: flex;
   gap: 50px;
 }
+
+@media (max-width: 480px) {
+  .product-hero {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .sidebar {
+    width: 100%;
+  }
+  .container {
+    padding-inline: 20px;
+  }
+}

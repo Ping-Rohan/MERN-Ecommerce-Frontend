@@ -42,5 +42,16 @@ const login = (form, navigate) => {
   };
 };
 
+const signup = (form) => {
+  return async (dispatch) => {
+    try {
+      const response = await axios.post("/users/signup", form);
+      toast.success(response.data.message);
+    } catch (error) {
+      toast.error(error.response.data.message);
+    }
+  };
+};
+
 export default userSlice.reducer;
-export { login };
+export { login, signup };

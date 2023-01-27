@@ -1,0 +1,66 @@
+.signup {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup input {
+  border: 1.5px solid #ccc;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 14px;
+}
+
+.input.row input {
+  width: 100%;
+}
+
+.signup .input {
+  border: none;
+  display: flex;
+  gap: 20px;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.signup-box {
+  background-color: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+.input label {
+  align-self: flex-start;
+  display: block;
+  font-size: 14px;
+}
+
+.signup button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 14px;
+}
+
+.admin-radio span input {
+  cursor: pointer;
+}
+
+.admin-radio span {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  position: relative;
+}

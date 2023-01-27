@@ -110,11 +110,24 @@
   text-align: right;
 }
 
-.cart-btn {
+.cart-btn-1 {
   background-color: #ff8b13;
   color: #fff;
   border: none;
   padding: 15px 30px;
   font-size: 12px;
   cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  .single-product .container {
+    flex-direction: column;
+  }
+  .single__product-size-quantity {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .checkout {
+    text-align: center;
+  }
 }

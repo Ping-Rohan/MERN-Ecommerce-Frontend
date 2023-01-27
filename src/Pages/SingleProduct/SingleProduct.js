@@ -37,11 +37,11 @@ export default function SingleProduct() {
 
               <div className="quantity">
                 <span>Quantity</span>
-                <input type="number" />
+                <input type="number" defaultValue="1" />
               </div>
             </div>
             <div className="checkout">
-              <button className="cart-btn">ADD TO CART</button>
+              <button className="cart-btn-1">ADD TO CART</button>
             </div>
           </div>
         </div>
