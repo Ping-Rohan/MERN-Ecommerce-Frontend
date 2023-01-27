@@ -7,7 +7,7 @@ const userSlice = createSlice({
   initialState: {
     accessToken: "",
     isLoggedIn: false,
-    document: null,
+    document: [],
   },
   reducers: {
     setLogin(state, action) {
