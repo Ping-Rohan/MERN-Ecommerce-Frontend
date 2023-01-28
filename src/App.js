@@ -8,7 +8,7 @@ import SingleProduct from "./Pages/SingleProduct/SingleProduct";
 import Signup from "./Pages/Signup/Signup";
 import AdminProfile from "./Pages/Profile/AdminProfile";
 import NormalProfile from "./Pages/Profile/NormalProfile";
-
+import PersistLogin from "./Axios/PersistLogin";
 export default function App() {
   return (
     <>
@@ -16,11 +16,13 @@ export default function App() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route element={<Layout />}>
-          <Route path="/" element={<Homepage />} />
-          <Route path="/product" element={<SingleProduct />} />
-          <Route path="/admin" element={<AdminProfile />} />
-          <Route path="/profile" element={<NormalProfile />} />
+        <Route element={<PersistLogin />}>
+          <Route element={<Layout />}>
+            <Route path="/" element={<Homepage />} />
+            <Route path="/product" element={<SingleProduct />} />
+            <Route path="/admin" element={<AdminProfile />} />
+            <Route path="/profile" element={<NormalProfile />} />
+          </Route>
         </Route>
       </Routes>
     </>

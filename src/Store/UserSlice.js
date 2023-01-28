@@ -5,7 +5,7 @@ import toast from "react-hot-toast";
 const userSlice = createSlice({
   name: "user",
   initialState: {
-    accessToken: "",
+    accessToken: null,
     isLoggedIn: false,
     document: [],
   },
@@ -54,4 +54,4 @@ const signup = (form) => {
 };
 
 export default userSlice.reducer;
-export { login, signup };
+export { login, signup, setLogin, setAccessToken };
