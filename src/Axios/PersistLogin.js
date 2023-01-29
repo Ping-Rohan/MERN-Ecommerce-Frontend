@@ -6,8 +6,9 @@ import { useSelector } from "react-redux";
 
 export default function PersistLogin() {
   const [isMounted, setIsMounted] = useState(true);
-  const accessToken = useSelector((state) => state.user.accessToken);
+  const accessToken = useSelector((state) => state.User.accessToken);
   const dispatch = useDispatch();
+  const doPersist = false;
 
   useEffect(() => {
     function persist() {

@@ -1,0 +1,68 @@
+.post .input {
+  border: none;
+}
+
+.post form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.post {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+}
+
+.post .input {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.category {
+  position: relative;
+}
+
+.category-suggest {
+  background-color: #fff;
+  height: 100px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  display: flex;
+  gap: 4px;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
+.category-suggest {
+  display: none;
+}
+
+.category-suggest.active {
+  display: block;
+}
+
+.category-suggest li {
+  list-style: none;
+  cursor: pointer;
+}
+
+.post .input input {
+  width: 100%;
+  border: 1.5px solid #ccc;
+}
+
+.post-product {
+  width: max-content;
+  margin-inline: auto;
+  padding: 10px;
+}
+
+textarea {
+  resize: none;
+  padding: 10px;
+}

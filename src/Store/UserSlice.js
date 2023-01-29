@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import axios from "../Axios/Axios";
+
 import toast from "react-hot-toast";
 
 const userSlice = createSlice({
@@ -32,6 +33,7 @@ const login = (form, navigate) => {
     try {
       const response = await axios.post("/users/login", form);
       toast.success(response.data.message);
+      console.log(response);
       dispatch(setAccessToken(response.data.accessToken));
       dispatch(setDocument(response.data.document));
       dispatch(setLogin(true));
@@ -52,6 +54,6 @@ const signup = (form) => {
     }
   };
 };
-
 export default userSlice.reducer;
+
 export { login, signup, setLogin, setAccessToken };

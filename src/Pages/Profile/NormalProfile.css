@@ -1,0 +1,69 @@
+.profile-image {
+  height: 130px;
+  width: 130px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #ff8b13;
+  margin-inline: auto;
+}
+
+.user-primary-info {
+  text-align: center;
+}
+
+.normal-profile .container {
+  display: flex;
+  margin-top: 50px;
+  justify-content: space-between;
+}
+
+.user-name {
+  font-size: 20px;
+  font-weight: 500;
+  color: #36454f;
+  padding-top: 5px;
+  display: inline-block;
+}
+
+.normal-profile {
+  background-color: #dcdcdc;
+  padding-block: 30px;
+}
+.account-details {
+  background-color: #fff;
+  width: 40%;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.account-details h1 {
+  font-size: 18px;
+  font-weight: 500;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.details-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.is-verified {
+  background-color: #ccc;
+  padding: 8px;
+  width: max-content;
+  border-radius: 5px;
+}
+
+.your-orders {
+  background-color: #fff;
+  width: 55%;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #36454f;
+}

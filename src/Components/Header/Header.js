@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 export default function Header() {
-  const isAdmin = useSelector((state) => state.user.document.isAdmin);
+  const isAdmin = useSelector((state) => state.User.document.isAdmin);
   const navigate = useNavigate();
 
   function handleProfile() {

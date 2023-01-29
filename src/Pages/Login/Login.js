@@ -1,11 +1,10 @@
-import React from "react";
 import "./Login.css";
-import { BiUserCircle, BiKey } from "react-icons/bi";
 import { useFormik } from "formik";
 import LoginSchema from "./LoginSchema";
 import { login } from "../../Store/UserSlice";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { BiUserCircle, BiKey } from "react-icons/bi";
 
 export default function Login() {
   const dispatch = useDispatch();

@@ -1,17 +1,19 @@
 import React from "react";
-import Login from "./Pages/Login/Login";
-import { Route, Routes } from "react-router-dom";
-import Homepage from "./Pages/Homepage/Homepage";
 import { Toaster } from "react-hot-toast";
-import Layout from "./Pages/Layout/Layout";
-import SingleProduct from "./Pages/SingleProduct/SingleProduct";
-import Signup from "./Pages/Signup/Signup";
-import AdminProfile from "./Pages/Profile/AdminProfile";
-import NormalProfile from "./Pages/Profile/NormalProfile";
+import { Route, Routes } from "react-router-dom";
 import PersistLogin from "./Axios/PersistLogin";
+import CreateProduct from "./Pages/Admin/CreateProduct";
+import Homepage from "./Pages/Homepage/Homepage";
+import Layout from "./Pages/Layout/Layout";
+import Login from "./Pages/Login/Login";
+import NormalProfile from "./Pages/Profile/NormalProfile";
+import Signup from "./Pages/Signup/Signup";
+import SingleProduct from "./Pages/SingleProduct/SingleProduct";
+import { BrowserRouter } from "react-router-dom";
+
 export default function App() {
   return (
-    <>
+    <BrowserRouter>
       <Toaster position="bottom-center" />
       <Routes>
         <Route path="/login" element={<Login />} />
@@ -20,11 +22,11 @@ export default function App() {
           <Route element={<Layout />}>
             <Route path="/" element={<Homepage />} />
             <Route path="/product" element={<SingleProduct />} />
-            <Route path="/admin" element={<AdminProfile />} />
             <Route path="/profile" element={<NormalProfile />} />
+            <Route path="/admin" element={<CreateProduct />} />
           </Route>
         </Route>
       </Routes>
-    </>
+    </BrowserRouter>
   );
 }

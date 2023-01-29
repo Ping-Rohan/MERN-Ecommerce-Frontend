@@ -1,8 +1,7 @@
-import React from "react";
-import "./Signup.css";
 import { useFormik } from "formik";
-import { signup } from "../../Store/UserSlice";
 import { useDispatch } from "react-redux";
+import { signup } from "../../Store/UserSlice";
+import "./Signup.css";
 
 const initialValues = {
   fullName: "",
