@@ -1,13 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./SingleProduct.css";
-
+import privateInstance from "../../Axios/PrivateInstance";
+import { useParams } from "react-router-dom";
 export default function SingleProduct() {
+  const params = useParams();
+  const [singleProduct, setSingleProduct] = useState([]);
+
+  useEffect(() => {
+    const getSingleProduct = async () => {
+      const response = await privateInstance.get(`/product/${params.id}`);
+      setSingleProduct(response.data.product);
+    };
+
+    getSingleProduct().catch((error) => console.log(error));
+  }, []);
+
   return (
     <section className="single-product">
       <div className="container">
         <div className="single-product-left">
           <img
-            src="https://img.freepik.com/free-photo/white-denim-jacket-front-view-streetwear-fashion_53876-106035.jpg?w=740&t=st=1674743737~exp=1674744337~hmac=cb8b93ca198e48429adcddac0bac9624b29b8b7c202d929113187b8f0cf157e7"
+            src={`http://localhost:5000/${singleProduct?.productImages?.[0]}`}
             alt=""
           />
         </div>
@@ -16,16 +29,15 @@ export default function SingleProduct() {
             <h3>About Product</h3>
           </div>
           <div className="single-product-right-content">
-            <em className="single-product-category">Mens Fashion</em>
+            <em className="single-product-category">
+              {singleProduct?.category?.categoryName}
+            </em>
             <div className="single__product-price">
-              <h2>Puffet jacket chinese</h2>
-              <span className="price">$300</span>
+              <h2>{singleProduct.productName}</h2>
+              <span className="price">${singleProduct.price}</span>
             </div>
             <div className="single__product-description">
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id
-                repellat error ad ab quam tempora!
-              </p>
+              <p>{singleProduct.productDescription}</p>
             </div>
             <div className="single__product-size-quantity">
               <div className="size">

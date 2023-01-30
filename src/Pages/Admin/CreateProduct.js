@@ -31,6 +31,7 @@ export default function CreateProduct() {
         form.append("image", images[i]);
       }
       dispatch(postProduct(form));
+      setSuggestionText("");
       action.resetForm();
     },
   });

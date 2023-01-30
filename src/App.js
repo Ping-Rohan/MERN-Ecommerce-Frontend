@@ -21,8 +21,8 @@ export default function App() {
         <Route element={<PersistLogin />}>
           <Route element={<Layout />}>
             <Route path="/" element={<Homepage />} />
-            <Route path="/product" element={<SingleProduct />} />
-            <Route path="/profile" element={<NormalProfile />} />
+            <Route path="/product/:id" element={<SingleProduct />} />
+            <Route path="/profile/" element={<NormalProfile />} />
             <Route path="/admin" element={<CreateProduct />} />
           </Route>
         </Route>
