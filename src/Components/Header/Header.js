@@ -10,6 +10,7 @@ import { useSelector } from "react-redux";
 
 export default function Header() {
   const isAdmin = useSelector((state) => state.User.document.isAdmin);
+  const cartLength = useSelector((state) => state.Cart.cartItem.length);
   const navigate = useNavigate();
 
   function handleCreateProduct() {
@@ -22,6 +23,10 @@ export default function Header() {
 
   function handleProfile() {
     navigate("/profile");
+  }
+
+  function handleCartClick() {
+    navigate("/cart");
   }
 
   return (
@@ -60,8 +65,11 @@ export default function Header() {
           )}
           {!isAdmin && (
             <div className="cart">
-              <MdShoppingCart className="header-button cart-btn" />{" "}
-              <span className="cart-number">3</span>
+              <MdShoppingCart
+                className="header-button cart-btn"
+                onClick={handleCartClick}
+              />{" "}
+              <span className="cart-number">{cartLength}</span>
             </div>
           )}
         </div>

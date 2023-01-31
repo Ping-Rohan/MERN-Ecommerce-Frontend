@@ -1,10 +1,17 @@
 import React, { useState, useEffect } from "react";
 import "./SingleProduct.css";
 import privateInstance from "../../Axios/PrivateInstance";
+import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../Store/CartSlice";
+
 export default function SingleProduct() {
+  const [quantity, setQuantity] = useState(1);
+  const isAdmin = useSelector((state) => state.User.document.isAdmin);
   const params = useParams();
   const [singleProduct, setSingleProduct] = useState([]);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const getSingleProduct = async () => {
@@ -15,6 +22,13 @@ export default function SingleProduct() {
     getSingleProduct().catch((error) => console.log(error));
   }, []);
 
+  function handleCartClick() {
+    dispatch(addToCart({ ...singleProduct, quantity }));
+  }
+
+  function handleQuantityChange(e) {
+    setQuantity(+e.target.value);
+  }
   return (
     <section className="single-product">
       <div className="container">
@@ -49,12 +63,20 @@ export default function SingleProduct() {
 
               <div className="quantity">
                 <span>Quantity</span>
-                <input type="number" defaultValue="1" />
+                <input
+                  type="number"
+                  defaultValue="1"
+                  onChange={handleQuantityChange}
+                />
               </div>
             </div>
-            <div className="checkout">
-              <button className="cart-btn-1">ADD TO CART</button>
-            </div>
+            {!isAdmin && (
+              <div className="checkout">
+                <button className="cart-btn-1" onClick={handleCartClick}>
+                  ADD TO CART
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </div>
