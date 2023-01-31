@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import toast from "react-hot-toast";
 import privateInstance from "../Axios/PrivateInstance";
 
 const postSlice = createSlice({
@@ -22,5 +23,14 @@ const getAllProducts = () => {
   };
 };
 
+const createCategory = async (name) => {
+  try {
+    const response = await privateInstance.post("/category", name);
+    toast.success(response.data.message);
+  } catch (error) {
+    toast.error(error.message);
+  }
+};
+
 export default postSlice.reducer;
-export { getAllProducts };
+export { getAllProducts, createCategory };

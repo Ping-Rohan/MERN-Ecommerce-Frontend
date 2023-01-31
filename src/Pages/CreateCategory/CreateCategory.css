@@ -1,0 +1,19 @@
+.create-category-wrapper {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  padding-top: 40px;
+}
+
+.create-category .input {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.create-category button {
+  padding: 10px 15px;
+}

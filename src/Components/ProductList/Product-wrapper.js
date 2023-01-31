@@ -37,6 +37,7 @@ export default function Productwrapper() {
                     productName={item.productName.slice(0, 20)}
                     price={item.price}
                     id={item._id}
+                    store={item.store}
                   />
                 );
               })}

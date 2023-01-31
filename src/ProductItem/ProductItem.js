@@ -19,7 +19,7 @@ export default function ProductItem(props) {
       <div className="item-content">
         <div className="store-name">
           <p>
-            <em>By Shreesh Store</em>
+            <em>By {props.store.fullName}</em>
           </p>
         </div>
         <h1 className="product-name">{props.productName}</h1>

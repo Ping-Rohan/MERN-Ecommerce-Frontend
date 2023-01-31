@@ -81,6 +81,7 @@ a {
 
 .header-button {
   cursor: pointer;
+  font-size: 22px;
 }
 
 @media (max-width: 480px) {

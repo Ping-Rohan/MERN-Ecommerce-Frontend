@@ -1,7 +1,10 @@
 import React from "react";
 import "./Header.css";
 import Logo from "../../Images/logo.png";
-import { MdManageAccounts, MdShoppingCart } from "react-icons/md";
+import { MdShoppingCart, MdAccountBox } from "react-icons/md";
+
+import { IoIosCreate } from "react-icons/io";
+import { AiFillPlusCircle } from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
@@ -9,9 +12,18 @@ export default function Header() {
   const isAdmin = useSelector((state) => state.User.document.isAdmin);
   const navigate = useNavigate();
 
-  function handleProfile() {
-    isAdmin ? navigate("/admin") : navigate("/profile");
+  function handleCreateProduct() {
+    navigate("/admin");
   }
+
+  function handleCreateCategory() {
+    navigate("/create-category");
+  }
+
+  function handleProfile() {
+    navigate("/profile");
+  }
+
   return (
     <header>
       <div className="container">
@@ -31,11 +43,27 @@ export default function Header() {
           <li>Contact</li>
         </ul>
         <div className="buttons">
-          <MdManageAccounts className="header-button" onClick={handleProfile} />
-          <div className="cart">
-            <MdShoppingCart className="header-button cart-btn" />{" "}
-            <span className="cart-number">3</span>
-          </div>
+          {isAdmin && (
+            <AiFillPlusCircle
+              className="header-button"
+              onClick={handleCreateCategory}
+            />
+          )}
+          {isAdmin && (
+            <IoIosCreate
+              className="header-button"
+              onClick={handleCreateProduct}
+            />
+          )}
+          {!isAdmin && (
+            <MdAccountBox className="header-button" onClick={handleProfile} />
+          )}
+          {!isAdmin && (
+            <div className="cart">
+              <MdShoppingCart className="header-button cart-btn" />{" "}
+              <span className="cart-number">3</span>
+            </div>
+          )}
         </div>
       </div>
     </header>
