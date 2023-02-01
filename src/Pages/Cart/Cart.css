@@ -94,6 +94,12 @@
   gap: 70px;
 }
 
+.cart-item-right span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .cart-item-quantity {
   width: 70px;
   display: block;

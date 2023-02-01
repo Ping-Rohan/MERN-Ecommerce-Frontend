@@ -3,18 +3,19 @@ import { setLogin, setAccessToken } from "../Store/UserSlice";
 import { useDispatch } from "react-redux";
 import { Outlet } from "react-router-dom";
 import { useSelector } from "react-redux";
+import privateInstance from "./PrivateInstance";
 
 export default function PersistLogin() {
   const [isMounted, setIsMounted] = useState(true);
   const accessToken = useSelector((state) => state.User.accessToken);
   const dispatch = useDispatch();
-  const doPersist = false;
 
   useEffect(() => {
-    function persist() {
+    async function persist() {
       if (isMounted) {
+        const response = await privateInstance.get("/users/refresh");
+        dispatch(setAccessToken(response.data.accessToken));
         dispatch(setLogin(true));
-        dispatch(setAccessToken("asdfsaotot"));
       }
       setIsMounted(false);
     }
