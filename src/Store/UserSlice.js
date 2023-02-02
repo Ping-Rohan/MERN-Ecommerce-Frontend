@@ -31,7 +31,9 @@ const { setAccessToken, setDocument, setLogin } = userSlice.actions;
 const login = (form, navigate) => {
   return async (dispatch) => {
     try {
-      const response = await axios.post("/users/login", form);
+      const response = await axios.post("/users/login", form, {
+        withCredentials: true,
+      });
       toast.success(response.data.message);
       console.log(response);
       dispatch(setAccessToken(response.data.accessToken));
@@ -47,7 +49,9 @@ const login = (form, navigate) => {
 const signup = (form) => {
   return async (dispatch) => {
     try {
-      const response = await axios.post("/users/signup", form);
+      const response = await axios.post("/users/signup", form, {
+        withCredentials: true,
+      });
       toast.success(response.data.message);
     } catch (error) {
       toast.error(error.response.data.message);

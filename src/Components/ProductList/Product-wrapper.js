@@ -22,9 +22,9 @@ export default function Productwrapper() {
 
   return (
     <section className="product-wrapper">
-      {productHeadingKeys.map((heading) => {
+      {productHeadingKeys.map((heading, i) => {
         return (
-          <>
+          <div key={`heading-${i}`}>
             <div className="category-heading">
               <h2>{heading}</h2>
               <a href="">See more</a>
@@ -38,11 +38,12 @@ export default function Productwrapper() {
                     price={item.price}
                     id={item._id}
                     store={item.store}
+                    key={item._id}
                   />
                 );
               })}
             </div>
-          </>
+          </div>
         );
       })}
     </section>

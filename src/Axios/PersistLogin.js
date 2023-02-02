@@ -13,8 +13,11 @@ export default function PersistLogin() {
   useEffect(() => {
     async function persist() {
       if (isMounted) {
-        const response = await privateInstance.get("/users/refresh");
-        dispatch(setAccessToken(response.data.accessToken));
+        const response = await privateInstance.post("/users/refresh", {
+          withCredentials: true,
+        });
+        console.log(response);
+        dispatch(setAccessToken(response.data.newAccessToken));
         dispatch(setLogin(true));
       }
       setIsMounted(false);

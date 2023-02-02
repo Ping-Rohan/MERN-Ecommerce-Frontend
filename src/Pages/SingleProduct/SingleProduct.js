@@ -36,6 +36,7 @@ export default function SingleProduct() {
           <img
             src={`http://localhost:5000/${singleProduct?.productImages?.[0]}`}
             alt=""
+            crossOrigin="anonymous"
           />
         </div>
         <div className="single-product-right">
