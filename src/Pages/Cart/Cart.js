@@ -1,9 +1,16 @@
 import { useSelector } from "react-redux";
 import "./Cart.css";
+import { useDispatch } from "react-redux";
+import { deleteCartItemAmount } from "../../Store/CartSlice";
 
 export default function Cart() {
   const cart = useSelector((state) => state.Cart.cartItem);
+  const dispatch = useDispatch();
   console.log(cart);
+
+  function handleCartItemRemove(id) {
+    dispatch(deleteCartItemAmount(id));
+  }
   return (
     <section className="product-carts">
       <div className="container">
@@ -38,7 +45,11 @@ export default function Cart() {
                           {item.productName}
                         </span>
                         <em>{item.category.categoryName}</em>
-                        <button>Remove</button>
+                        <button
+                          onClick={handleCartItemRemove.bind(null, item._id)}
+                        >
+                          Remove
+                        </button>
                       </div>
                     </div>
                     <div className="cart-item-right">
