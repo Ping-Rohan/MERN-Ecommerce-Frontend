@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import privateInstance from "../Axios/PrivateInstance";
 
 const cartSlice = createSlice({
   name: "cart",
@@ -6,40 +7,19 @@ const cartSlice = createSlice({
     cartItem: [],
     totalPrice: undefined,
   },
-  reducers: {
-    replaceCart(state, action) {
-      state.cartItem = action.payload;
-    },
-    addToCart(state, action) {
-      const cart = action.payload;
-      const index = state.cartItem.findIndex((item) => item._id === cart._id);
-
-      if (index > -1) {
-        state.cartItem[index].quantity =
-          state.cartItem[index].quantity + cart.quantity;
-        state.cartItem[index].total =
-          state.cartItem[index].price * state.cartItem[index].quantity;
-      } else {
-        state.cartItem.push(cart);
-      }
-    },
-    deleteCartItemAmount(state, action) {
-      const index = state.cartItem.findIndex(
-        (item) => item._id === action.payload
-      );
-      if (state.cartItem[index].quantity > 1) {
-        console.log("hello");
-        state.cartItem[index].quantity -= 1;
-      } else {
-        state.cartItem = state.cartItem.filter(
-          (item) => item._id !== action.payload
-        );
-      }
-    },
-  },
 });
 
-const { replaceCart, addToCart, deleteCartItemAmount } = cartSlice.actions;
 export default cartSlice.reducer;
 
-export { addToCart, deleteCartItemAmount };
+const addCart = (product) => {
+  console.log(product);
+  return async (dispatch) => {
+    const response = await privateInstance.post("/cart", {
+      product: product._id,
+      quantity: product.quantity,
+    });
+    console.log(response);
+  };
+};
+
+export { addCart };

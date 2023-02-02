@@ -1,15 +1,21 @@
 import { useSelector } from "react-redux";
 import "./Cart.css";
+import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { deleteCartItemAmount } from "../../Store/CartSlice";
 
 export default function Cart() {
   const cart = useSelector((state) => state.Cart.cartItem);
-  const dispatch = useDispatch();
+
   console.log(cart);
 
-  function handleCartItemRemove(id) {
-    dispatch(deleteCartItemAmount(id));
+  const dispatch = useDispatch();
+
+  // useEffect(() => {
+  //   dispatch(fetchCartItems());
+  // }, []);
+
+  function handleCartItemRemove(product) {
+    // dispatch(deleteCartItems(product));
   }
   return (
     <section className="product-carts">
@@ -38,16 +44,14 @@ export default function Cart() {
                   <div className="cart-item">
                     <div className="cart-item-left">
                       <div className="cart-img">
-                        <img src={item?.productImages?.[0]} alt="" />
+                        <img src={item?.product?.productImages?.[0]} alt="" />
                       </div>
                       <div className="cart-product-info">
                         <span className="cart-product-name">
-                          {item.productName}
+                          {item?.product?.productName}
                         </span>
-                        <em>{item.category.categoryName}</em>
-                        <button
-                          onClick={handleCartItemRemove.bind(null, item._id)}
-                        >
+                        {/* <em>{item.category.categoryName}</em> */}
+                        <button onClick={handleCartItemRemove.bind(null, item)}>
                           Remove
                         </button>
                       </div>
@@ -56,7 +60,9 @@ export default function Cart() {
                       <span className="cart-item-quantity">
                         {item.quantity}
                       </span>
-                      <span className="cart-item-price">${item.price}</span>
+                      <span className="cart-item-price">
+                        ${item?.product?.price}
+                      </span>
                       <span className="cart-item-total">${item.total}</span>
                     </div>
                   </div>

@@ -4,7 +4,7 @@ import privateInstance from "../../Axios/PrivateInstance";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { addToCart } from "../../Store/CartSlice";
+import { addCart } from "../../Store/CartSlice";
 
 export default function SingleProduct() {
   const [quantity, setQuantity] = useState(1);
@@ -23,7 +23,7 @@ export default function SingleProduct() {
   }, []);
 
   function handleCartClick() {
-    dispatch(addToCart({ ...singleProduct, quantity }));
+    dispatch(addCart({ ...singleProduct, quantity }));
   }
 
   function handleQuantityChange(e) {
