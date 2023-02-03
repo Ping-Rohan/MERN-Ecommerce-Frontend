@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import "./Cart.css";
 import { useEffect } from "react";
-import { fetchCart } from "../../Store/CartSlice";
+import { fetchCart, deleteCart } from "../../Store/CartSlice";
 import { useDispatch } from "react-redux";
 
 export default function Cart() {
@@ -16,7 +16,7 @@ export default function Cart() {
   }, []);
 
   function handleCartItemRemove(product) {
-    // dispatch(deleteCartItems(product));
+    dispatch(deleteCart(product));
   }
   return (
     <section className="product-carts">
@@ -52,7 +52,12 @@ export default function Cart() {
                           {item?.product?.productName}
                         </span>
                         {/* <em>{item.category.categoryName}</em> */}
-                        <button onClick={handleCartItemRemove.bind(null, item)}>
+                        <button
+                          onClick={handleCartItemRemove.bind(
+                            null,
+                            item.product._id
+                          )}
+                        >
                           Remove
                         </button>
                       </div>
