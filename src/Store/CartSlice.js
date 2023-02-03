@@ -7,9 +7,18 @@ const cartSlice = createSlice({
     cartItem: [],
     totalPrice: undefined,
   },
+  reducers: {
+    replaceCart(state, action) {
+      state.cartItem = action.payload;
+    },
+    addItemToCart(state, action) {
+      state.cartItem.push(action.payload);
+    },
+  },
 });
 
 export default cartSlice.reducer;
+const { replaceCart, addItemToCart } = cartSlice.actions;
 
 const addCart = (product) => {
   console.log(product);
@@ -19,7 +28,15 @@ const addCart = (product) => {
       quantity: product.quantity,
     });
     console.log(response);
+    dispatch(addItemToCart(response.data.cart));
   };
 };
 
-export { addCart };
+const fetchCart = () => {
+  return async (dispatch) => {
+    const response = await privateInstance.get("/cart");
+    dispatch(replaceCart(response.data.carts));
+  };
+};
+
+export { addCart, fetchCart };

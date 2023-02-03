@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import "./Cart.css";
 import { useEffect } from "react";
+import { fetchCart } from "../../Store/CartSlice";
 import { useDispatch } from "react-redux";
 
 export default function Cart() {
@@ -10,9 +11,9 @@ export default function Cart() {
 
   const dispatch = useDispatch();
 
-  // useEffect(() => {
-  //   dispatch(fetchCartItems());
-  // }, []);
+  useEffect(() => {
+    dispatch(fetchCart());
+  }, []);
 
   function handleCartItemRemove(product) {
     // dispatch(deleteCartItems(product));

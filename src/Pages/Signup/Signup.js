@@ -1,6 +1,6 @@
 import { useFormik } from "formik";
 import { useDispatch } from "react-redux";
-import { signup } from "../../Store/UserSlice";
+import { signup } from "../../Store/UserActions";
 import "./Signup.css";
 
 const initialValues = {

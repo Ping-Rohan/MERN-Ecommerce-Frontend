@@ -1,7 +1,7 @@
 import "./Login.css";
 import { useFormik } from "formik";
 import LoginSchema from "./LoginSchema";
-import { login } from "../../Store/UserSlice";
+import { login } from "../../Store/UserActions";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { BiUserCircle, BiKey } from "react-icons/bi";

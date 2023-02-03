@@ -1,8 +1,16 @@
 import { useSelector } from "react-redux";
 import "./NormalProfile.css";
+import { useEffect } from "react";
+import { getProfile } from "../../Store/UserActions";
+import { useDispatch } from "react-redux";
 
 export default function NormalProfile() {
   const userDocument = useSelector((state) => state.User.document);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getProfile());
+  }, []);
 
   return (
     <section className="normal-profile">
